@@ -123,15 +123,17 @@ afterEvaluate {
                 version = project.version.toString()
 
                 // Use the correct AAR for production flavor
-                artifact(tasks.named("bundleProductionReleaseAar").get())
+//                artifact(tasks.named("bundleProductionReleaseAar").get())
 
-                pom {
-                    withXml {
-                        asNode().appendNode("dependencies").apply {
-                            addAllDependencies()
-                        }
-                    }
-                }
+                from(components["productionRelease"])
+
+//                pom {
+//                    withXml {
+//                        asNode().appendNode("dependencies").apply {
+//                            addAllDependencies()
+//                        }
+//                    }
+//                }
             }
 
             create("mavenStaging", MavenPublication::class) {
@@ -140,15 +142,17 @@ afterEvaluate {
                 version = project.version.toString()
 
                 // Use the correct AAR for staging flavor
-                artifact(tasks.named("bundleStagingReleaseAar").get())
+//                artifact(tasks.named("bundleStagingReleaseAar").get())
 
-                pom {
-                    withXml {
-                        asNode().appendNode("dependencies").apply {
-                            addAllDependencies()
-                        }
-                    }
-                }
+                from(components["stagingRelease"])
+
+//                pom {
+//                    withXml {
+//                        asNode().appendNode("dependencies").apply {
+//                            addAllDependencies()
+//                        }
+//                    }
+//                }
             }
 
             create("mavenDev", MavenPublication::class) {
@@ -157,15 +161,17 @@ afterEvaluate {
                 version = project.version.toString()
 
                 // Use the correct AAR for dev flavor
-                artifact(tasks.named("bundleDevReleaseAar").get())
+//                artifact(tasks.named("bundleDevReleaseAar").get())
 
-                pom {
-                    withXml {
-                        asNode().appendNode("dependencies").apply {
-                            addAllDependencies()
-                        }
-                    }
-                }
+                from(components["devRelease"])
+
+//                pom {
+//                    withXml {
+//                        asNode().appendNode("dependencies").apply {
+//                            addAllDependencies()
+//                        }
+//                    }
+//                }
             }
         }
     }
@@ -188,6 +194,12 @@ fun Node.appendDependency(
 
 // Helper function to add all dependencies
 fun Node.addAllDependencies() {
+    // lifecycle-viewmodel-compose
+    appendDependency(
+        groupId = "androidx.lifecycle",
+        artifactId = "lifecycle-viewmodel-compose",
+        version = "2.8.6"
+    )
     // coroutine
     appendDependency(
         "org.jetbrains.kotlinx",
@@ -253,7 +265,9 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+    /// viewmodel
+    api(libs.androidx.lifecycle.viewmodel.compose)
 
     // coroutine
     api(libs.kotlinx.coroutines.core)
