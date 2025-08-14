@@ -121,140 +121,24 @@ afterEvaluate {
                 groupId = project.group.toString()
                 artifactId = "scanner-sdk"
                 version = project.version.toString()
-
-                // Use the correct AAR for production flavor
-//                artifact(tasks.named("bundleProductionReleaseAar").get())
-
                 from(components["productionRelease"])
-
-//                pom {
-//                    withXml {
-//                        asNode().appendNode("dependencies").apply {
-//                            addAllDependencies()
-//                        }
-//                    }
-//                }
             }
 
             create("mavenStaging", MavenPublication::class) {
                 groupId = project.group.toString()
                 artifactId = "scanner-sdk-staging"
                 version = project.version.toString()
-
-                // Use the correct AAR for staging flavor
-//                artifact(tasks.named("bundleStagingReleaseAar").get())
-
                 from(components["stagingRelease"])
-
-//                pom {
-//                    withXml {
-//                        asNode().appendNode("dependencies").apply {
-//                            addAllDependencies()
-//                        }
-//                    }
-//                }
             }
 
             create("mavenDev", MavenPublication::class) {
                 groupId = project.group.toString()
                 artifactId = "scanner-sdk-dev"
                 version = project.version.toString()
-
-                // Use the correct AAR for dev flavor
-//                artifact(tasks.named("bundleDevReleaseAar").get())
-
                 from(components["devRelease"])
-
-//                pom {
-//                    withXml {
-//                        asNode().appendNode("dependencies").apply {
-//                            addAllDependencies()
-//                        }
-//                    }
-//                }
             }
         }
     }
-}
-
-// Helper function to append dependencies in Kotlin DSL
-fun Node.appendDependency(
-    groupId: String,
-    artifactId: String,
-    version: String,
-    scope: String = "runtime"
-) {
-    appendNode("dependency").apply {
-        appendNode("groupId", groupId)
-        appendNode("artifactId", artifactId)
-        appendNode("version", version)
-        appendNode("scope", scope)
-    }
-}
-
-// Helper function to add all dependencies
-fun Node.addAllDependencies() {
-    // lifecycle-viewmodel-compose
-    appendDependency(
-        groupId = "androidx.lifecycle",
-        artifactId = "lifecycle-viewmodel-compose",
-        version = "2.8.6"
-    )
-    // coroutine
-    appendDependency(
-        "org.jetbrains.kotlinx",
-        "kotlinx-coroutines-core",
-        "1.8.1"
-    )
-
-    // html parser
-    appendDependency(
-        groupId = "org.jsoup",
-        artifactId = "jsoup",
-        version = "1.15.3"
-    )
-
-    /// networking
-    appendDependency("com.squareup.retrofit2", "retrofit", "2.11.0")
-    appendDependency(
-        "com.squareup.retrofit2",
-        "converter-gson",
-        "2.11.0"
-    )
-    appendDependency(
-        "com.squareup.okhttp3",
-        "logging-interceptor",
-        "4.11.0"
-    )
-
-    /// datastore
-    appendDependency(
-        "androidx.datastore",
-        "datastore-preferences",
-        "1.1.1"
-    )
-
-    /// camera
-    appendDependency("androidx.camera", "camera-core", "1.4.0")
-    appendDependency("androidx.camera", "camera-camera2", "1.4.0")
-    appendDependency("androidx.camera", "camera-view", "1.4.0")
-    appendDependency("androidx.camera", "camera-lifecycle", "1.4.0")
-    appendDependency("androidx.camera", "camera-extensions", "1.4.0")
-
-    /// tensorflow
-    appendDependency(
-        "org.tensorflow",
-        "tensorflow-lite-task-vision",
-        "0.4.4"
-    )
-
-    /// coil
-    appendDependency("io.coil-kt", "coil", "2.7.0")
-    appendDependency("io.coil-kt", "coil-compose", "2.7.0")
-    appendDependency("io.coil-kt", "coil-gif", "2.7.0")
-
-    // barcode
-    appendDependency("com.google.zxing", "core", "3.4.1")
 }
 
 dependencies {
