@@ -1,0 +1,6 @@
+before_install:
+
+jdk:
+  -openjdk17
+
+install:

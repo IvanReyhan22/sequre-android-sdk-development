@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Scanner SDK</string>
+
+    <string name="scanner_label_title">Adjust QR to the area</string>
+    <string name="scanner_label_content">Scanner will begin automatically</string>
+
+    <string name="hold_this_position">Hold this Position</string>
+
+    <string name="not_aligned">Not Aligned</string>
+    <string name="too_far">Too Far</string>
+    <string name="too_close">Too Close</string>
+    <string name="processing_qr_desc">Hold tight while we process your QR</string>
+    <string name="proceed">Proceed</string>
+    <string name="unknown_viewmodel_class">Unknown ViewModel class</string>
+    <string name="unable_to_open_app_settings">Unable to open app settings</string>
+    <string name="camera_not_initialized">Camera not initialized</string>
+    <string name="click_me">Click Me!</string>
+    <string name="sdk_is_not_validated_yet">SDK is not validated yet</string>
+    <string name="you_need_to_validate_your_app_to_the_sdk_before_using_it">You need to validate your app to the SDK before using it.</string>
+    <string name="uploading_qr_image">"Uploading QR Image… "</string>
+    <string name="glare_detection_notice">Tilt the phone to avoid the flash reflection</string>
+    <string name="qr_not_detected">"No QR detected. Please make sure there is a QR and try again. "</string>
+    <string name="detection_failed_due_to_unknown_error">Detection failed due to unknown error</string>
+    <string name="maximum_zoom_reached">Maximum zoom reached</string>
+    <string name="minimum_zoom_reached">Minimum zoom reached</string>
+    <string name="qr_link_is_not_valid_please_scan_again">QR link is not valid, please scan again</string>
+</resources>

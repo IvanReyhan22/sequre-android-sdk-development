@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Scanner SDK</string>
+
+    <string name="scanner_label_title">Sesuaikan QR kedalam area</string>
+    <string name="scanner_label_content">Scan akan dimulai secara otomatis</string>
+
+    <string name="hold_this_position">Tahan Posisi Ini</string>
+    
+    <string name="not_aligned">Tidak Sejajar Box</string>
+    <string name="too_far">Terlalu Jauh</string>
+    <string name="too_close">Terlalu Dekat</string>
+    <string name="processing_qr_desc">Memproses kode QR anda</string>
+    <string name="proceed">Lanjutkan</string>
+
+    <string name="unknown_viewmodel_class">Kelas ViewModel tidak dikenal</string>
+    <string name="unable_to_open_app_settings">Tidak dapat membuka pengaturan aplikasi</string>
+    <string name="camera_not_initialized">Kamera belum diinisialisasi</string>
+    <string name="click_me">Klik Saya!</string>
+    <string name="sdk_is_not_validated_yet">SDK belum divalidasi</string>
+    <string name="you_need_to_validate_your_app_to_the_sdk_before_using_it">Anda perlu memvalidasi aplikasi Anda dengan SDK sebelum menggunakannya.</string>
+    <string name="uploading_qr_image">"Mengunggah Gambar QR…"</string>
+    <string name="glare_detection_notice">Miringkan ponsel agar terhindar dari pantulan flash</string>
+    <string name="qr_not_detected">"Tidak ada QR yang terdeteksi. Pastikan ada QR dan coba lagi."</string>
+    <string name="detection_failed_due_to_unknown_error">Deteksi gagal karena kesalahan yang tidak diketahui</string>
+    <string name="maximum_zoom_reached">Pembesaran maksimum tercapai</string>
+    <string name="minimum_zoom_reached">Pembesaran minimum tercapai</string>
+    <string name="qr_link_is_not_valid_please_scan_again">Tautan QR tidak valid, silakan scan ulang.</string>
+</resources>
